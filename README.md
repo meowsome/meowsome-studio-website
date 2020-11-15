@@ -2,6 +2,6 @@
 
 Repository for the meowsome studio website.
 
-Originally created March 2020.
+Originally created August 2020.
 
 Created using Eleventy.
