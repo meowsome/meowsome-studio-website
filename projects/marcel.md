@@ -15,6 +15,12 @@ links: [
     }, {
         title: Discord Invite,
         link: https://marcel.meowso.me/invite
+    }, {
+        title: Bot GitHub Repository,
+        link: https://github.com/meowsome/marcel-bot
+    }, {
+        title: Website GitHub Repository,
+        link: https://github.com/meowsome/marcel-website
     }
 ]
 headerImage: marcel1.png

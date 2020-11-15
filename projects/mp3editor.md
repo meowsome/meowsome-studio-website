@@ -12,10 +12,9 @@ links: [
     {
         title: Website,
         link: https://mp3.meowso.me/
-    },
-    {
-        title: Code Repository,
-        link: https://glitch.com/edit/#!/mp3-editor
+    }, {
+        title: GitHub Repository,
+        link: https://github.com/meowsome/mp3
     }
 ]
 headerImage: mp3editor1.jpg
