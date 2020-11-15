@@ -1,0 +1,25 @@
+---
+title: Projects
+link: projects
+---
+
+{% include header %}
+
+<section id="projects" class="wrapper-vertical w10">
+    <div class="projects container">
+        {% for project in collections.projects %}
+            <a href="/projects/{{ project.data.link }}" class="slidein card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
+                <div class="p3 wrapper-vertical margin-below">
+                    <div class="wrapper-horizontal center left">
+                        <img src="/assets/images/portfolio/{{ project.data.link }}.png" class="icon">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h3>{{ project.data.title }}</h3>
+                    </div>
+                    <p>{{ project.data.short_description }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+{% include footer %}

@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>{% if title %}{{ title }} / {% endif %}Meowsome Studio</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/images/avatar.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="meowsome, website, web, design, development, dev, code, programming, html, css, node.js, javascript, jquery">
+    <meta name="description" content="We feature a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time">
+    <meta property="og:title" content="{% if title %}{{ title }} / {% endif %}Meowsome Studio">
+    <meta property="og:description" content="We feature a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time">
+    <meta property="og:image" content="https://meowso.me/assets/images/avatar.png">
+    <meta property="og:url" content="https://meowso.me{%if dates %}/projects/{{ link }}{% elsif link %}/{{ link }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="site-padding">
+        <div class="main">
+            <header class="w10">
+                <div class="wrapper-horizontal center">
+                    <div class="w4 left alt-left">
+                        <a class="link ripple-button-dark" href="/">
+                            {% if title and links == null %}
+                                <div class="wrapper-horizontal center left">
+                                    <img class="icon"  src="/assets/images/avatar.png">
+                                    &nbsp;
+                                    <div class="wrapper-vertical">
+                                        <h3>{{ title }}</h3>
+                                        <h5>meowsome studio</h5>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="wrapper-horizontal center left">
+                                    <img class="icon" src="/assets/images/avatar.png">
+                                    &nbsp;
+                                    <h4>meowsome studio</h4>
+                                </div>
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="right w6 alt-left">
+                        <div class="wrapper-horizontal">
+                            <a href="/" class="link ripple-button-dark{% if index %} active{% endif %}">About</a>
+                            <a href="/projects" class="link ripple-button-dark{% if title == 'Projects' or dates %} active{% endif %}">Projects</a>
+                            <a href="/contact" class="link ripple-button-dark{% if title == 'Contact' %} active{% endif %}">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </header>

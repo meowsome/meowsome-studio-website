@@ -1,0 +1,32 @@
+---
+title: Contact
+link: contact
+---
+
+{% include header %}
+
+<section class="center">
+    <article class="card w6 foreground slidein">
+        <div class="p3 wrapper-vertical margin-below">
+            <p>Inquire about collaborating on a project, or just say hello!</p>
+            <form name="contact" method="POST" class="margin-below ignore-mobile-wrapper-fixing" netlify>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea rows="5" name="message" id="message" required></textarea>
+                </div>
+                        
+                <div class="right">
+                    <button type="submit" class="accent ripple-button-light">Send <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
+
+{% include footer %}
