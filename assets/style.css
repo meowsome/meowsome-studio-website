@@ -688,8 +688,7 @@ a.pill.accent {
 
 @media only screen and (min-width: 850px) {
     #index-image {
-        margin-left: -5em;
-        width: 145%
+        margin-top: -3em;
     }
 
     .projects {
