@@ -682,6 +682,11 @@ a.pill.accent {
         justify-content: flex-end !important;
         align-items: flex-end;
     }
+
+    /* Don't show the project image on every 4th item while in mobile layout */
+    .projects .card:nth-child(4n+1) .project-image {
+        display: none;
+    }
 }
 
 /* DESKTOP */
@@ -693,25 +698,25 @@ a.pill.accent {
 
     .projects {
         display: flex;
-        flex-flow: column wrap;
-        align-content: space-between;
-        height: 35em;
+        flex-flow: row wrap;
+        width: 100%;
     }
 
     .projects .card {
-        width: 32%;
+        flex: auto;
+        margin: 8px;
     }
 
-    .projects .card:nth-child(3n+1) {
-        order: 1;
+    /* Make every 4th item starting from the 1st 100% width
+    .projects .card:nth-child(4n+1) {
+        width: 100%;
     }
 
-    .projects .card:nth-child(3n+2) {
-        order: 2;
-    }
-
-    .projects .card:nth-child(3n) {
-        order: 3;
+    /* Make every other item fill up the same width (33.3%) */
+    .projects .card:nth-child(4n+2),
+    .projects .card:nth-child(4n+3),
+    .projects .card:nth-child(4n+4) {
+        width: 1em;
     }
 
     .projects::before,
