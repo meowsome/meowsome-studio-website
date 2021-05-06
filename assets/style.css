@@ -700,6 +700,7 @@ a.pill.accent {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
+        margin-bottom: 1em;
     }
 
     .projects .card {
