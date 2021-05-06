@@ -707,7 +707,7 @@ a.pill.accent {
         margin: 8px;
     }
 
-    /* Make every 4th item starting from the 1st 100% width
+    /* Make every 4th item starting from the 1st 100% width */
     .projects .card:nth-child(4n+1) {
         width: 100%;
     }
