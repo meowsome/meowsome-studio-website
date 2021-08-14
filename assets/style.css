@@ -1,5 +1,15 @@
 /* FONTS */
 
+@font-face {
+    font-family: "Cerebri Sans Book";
+    src: url("fonts/Cerebri-Sans-Book.woff") format('woff');
+}
+
+@font-face {
+    font-family: "Rubik Bold";
+    src: url("fonts/Rubik-Bold.woff") format('woff');
+}
+
 h1,
 h2,
 h3,
@@ -35,11 +45,37 @@ body,
 button,
 li,
 textarea {
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", Roboto, Ubuntu, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+b,
+p,
+a,
+body,
+button,
+li,
+textarea {
+    font-family: "Cerebri Sans Book", sans-serif;
+}
+
+h1 {
+    font-family: "Rubik Bold", sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 55px;
+    transition: color 0.25s;
+}
+
+h2,
+h3,
+h4,
+h5,
+b,
+.button {
+    font-family: "Rubik Bold", sans-serif;
+    letter-spacing: 0.01em;
 }
 
 b {
