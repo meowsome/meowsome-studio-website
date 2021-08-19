@@ -8,7 +8,6 @@ function ripple(color, button) {
         if (this.querySelector('span.ripple-' + color)) this.removeChild(this.querySelector('span.ripple-' + color));
 
         document.documentElement.style.setProperty('--elementWidth', this.offsetWidth / 15);
-        console.log(this.offsetWidth);
 
         var rect = this.getBoundingClientRect();
         var x = e.pageX - (rect.left + window.pageXOffset) - 10;
