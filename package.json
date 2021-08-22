@@ -7,6 +7,11 @@
   "author": "Meowsome",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.12.1"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "genius-lyrics": "^4.2.9",
+    "twitter": "^1.7.1"
   }
 }
