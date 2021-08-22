@@ -445,6 +445,34 @@ a:visited.pill.accent:hover {
     border-radius: 5px;
 }
 
+[tooltip] {
+    position: relative;
+}
+
+[tooltip]::before {
+    content: attr(tooltip);
+    background: white;
+    color: #838383;
+    padding: 7px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    top: -2.5em;
+    right: 0;
+    white-space: nowrap;
+    transform: translateY(0.2em);
+    box-shadow: 0 2px 20px rgba(0,0,0,.1);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+[tooltip]:hover::before {
+    opacity: 1;
+    z-index: 5;
+    visibility: visible;
+    transform: translateY(0);
+}
 
 
 /* animations */
