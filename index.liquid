@@ -6,37 +6,47 @@ index: true
 
 <div class="center wrapper-horizontal">
     <section class="w5 slidein">
-        <article class="card w10 foreground">
-            <div class="p2 wrapper-vertical center">
-                <section class="w7">
-                    <img class="w10" id="index-image" src="/assets/images/icon.png">
-                </section>
-                <section class="w10">
-                    <div class="p2 wrapper-vertical text margin-below">
-                        <h3>Hello, and welcome!</h3>
-                        <p>Meowsome Studio features a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time.</p>
-                    </div>
-                </section>
-            </div>
-        </article>
+        <div class="p1">
+            <article class="card w10 foreground">
+                <div class="p2 wrapper-vertical center">
+                    <section class="w7">
+                        <img class="w10" id="index-image" src="/assets/images/icon.png">
+                    </section>
+                    <section class="w10">
+                        <div class="p2 wrapper-vertical text margin-below">
+                            <h3>Hello, and welcome!</h3>
+                            <p>Meowsome Studio features a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time.</p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </div>
     </section>
     &nbsp;&nbsp;&nbsp;
-    <section class="w4 slidein">
-        <div class="p2">
-            <a href="/projects/{{ collections.projects[0].data.link }}" class="container">
-                <article class="card ripple-button-light" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
-                    <div class="p4 wrapper-vertical margin-below">
-                        <h5 class="meta">FEATURED PROJECT</h5>
-                        <div class="wrapper-horizontal center left">
-                            <img src="/assets/images/portfolio/{{ collections.projects[0].data.link }}.png" class="icon">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <h1>{{ collections.projects[0].data.title }}</h1>
+    <section class="wrapper-vertical w4">
+        <section class="w10 slidein">
+            <div class="p1">
+                <a href="/projects/{{ collections.projects[0].data.link }}" class="container">
+                    <article class="card ripple-button-light" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
+                        <div class="p3 wrapper-vertical margin-below">
+                            <h5 class="meta">FEATURED PROJECT</h5>
+                            <div class="wrapper-horizontal center left">
+                                <img src="/assets/images/portfolio/{{ collections.projects[0].data.link }}.png" class="icon">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <h1>{{ collections.projects[0].data.title }}</h1>
+                            </div>
+                            <p class="bigtext">{{ collections.projects[0].data.short_description }}</p>
                         </div>
-                        <p class="bigtext">{{ collections.projects[0].data.short_description }}</p>
-                    </div>
-                </article>
-            </a>
+                    </article>
+                </a>
+            </div>
+        </section>
+        
+        <div class="slidein p1">
+            <h5>What I've been up to...</h5>
         </div>
+        <section class="w10 wrapper-horizontal center alt-left feed">
+        </section>
     </section>
 </div>
 
