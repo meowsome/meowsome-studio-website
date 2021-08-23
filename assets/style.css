@@ -155,6 +155,11 @@ li {
     flex-flow: row wrap;
 }
 
+.nowrapper-horizontal {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
 .wrapper-vertical {
     display: flex;
     flex-direction: column;
@@ -226,6 +231,10 @@ li {
     width: 100%;
 }
 
+.grow {
+    flex-grow: 1;
+}
+
 .site-padding {
     padding: 5px 30px 15px 30px;
 }
@@ -267,6 +276,11 @@ footer {
     margin-bottom: 0.5em;
 }
 
+.feed article,
+.feed section {
+    margin-bottom: 0.1em;
+}
+
 
 
 
@@ -277,6 +291,10 @@ footer {
     border-radius: 20px;
     word-wrap: break-word;
     transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.foreground.card,
+.projects .card {
     margin-bottom: 1em;
 }
 
@@ -692,8 +710,12 @@ a.pill.accent {
         flex-direction: column;
     }
 
-    .p3 {
-        padding: 15px 20px;
+    .site-padding {
+        padding: 5px 15px 15px 15px;
+    }
+
+    .nowrapper-horizontal {
+        flex-flow: row wrap;
     }
 
     .right {
