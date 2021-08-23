@@ -46,6 +46,21 @@ index: true
             <h5>What I've been up to...</h5>
         </div>
         <section class="w10 wrapper-horizontal center alt-left feed">
+            <section class="nowrapper-horizontal">
+                {% if github %}
+                    <section class="grow slidein">
+                        <div class="p1">
+                            <a href="{{ github.url }}" target="_blank" class="container">
+                                <article class="card ripple-button-light" style="background:linear-gradient(#6e6e6e, #211F1F) center;background-size:cover;">
+                                    <div class="p2 wrapper-vertical">
+                                        <p><i class="fab fa-github"></i>&nbsp;&nbsp;Committed to <b>{{ github.repo }}</b></p>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </section>
+                {% endif %}
+            </section>
         </section>
     </section>
 </div>
