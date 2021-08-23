@@ -61,13 +61,6 @@ textarea {
     font-family: "Cerebri Sans Book", sans-serif;
 }
 
-h1 {
-    font-family: "Rubik Bold", sans-serif;
-    letter-spacing: 0.02em;
-    font-size: 55px;
-    transition: color 0.25s;
-}
-
 h2,
 h3,
 h4,
@@ -83,16 +76,18 @@ b {
 }
 
 h1 {
-    font-size: 50px;
+    font-family: "Rubik Bold", sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 40px;
     transition: color 0.25s;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 h3 {
-    font-size: 32.5px;
+    font-size: 30px;
 }
 
 h4 {
@@ -106,7 +101,7 @@ h5 {
 a,
 p,
 li {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 a:link,
