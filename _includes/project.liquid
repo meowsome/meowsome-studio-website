@@ -3,13 +3,13 @@
 <section class="wrapper-horizontal left">
     <div class="w7">
         <div class="p1">
-            <article id="project_title" class="slidein wrapper-horizontal center left ignore-mobile-wrapper-fixing p1">
+            <article id="project_title" class="slidein1 wrapper-horizontal center left ignore-mobile-wrapper-fixing p1">
                 <img src="/assets/images/portfolio/{{ link }}.png" class="icon">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <h1>{{ title }}</h1>
             </article>
 
-            <div class="slidein card foreground w10">
+            <div class="slidein2 card foreground w10">
                 <div class="p3 wrapper-vertical margin-below">
                     <h5>Description</h5>
                     <p class="text">{{ description }}</p>
@@ -20,7 +20,7 @@
 
     <div class="w3">
         <div class="p1">
-            <article class="slidein card foreground w10">
+            <article class="slidein3 card foreground w10">
                 <div class="wrapper-vertical p3 margin-below">
                     <div class="wrapper-horizontal w10 ignore-mobile-wrapper-fixing">
                         <div class="w6">
@@ -42,7 +42,7 @@
             </article>
 
             {% if technologies %}
-                <article class="slidein card foreground w10">
+                <article class="slidein4 card foreground w10">
                     <div class="wrapper-vertical p3">
                         <div class="wrapper-vertical margin-below">
                             <h5>Technologies</h5>
@@ -59,7 +59,7 @@
             {% endif %}
 
             {% if links %}
-                <article class="slidein card foreground w10">
+                <article class="slidein5 card foreground w10">
                     <div class="wrapper-vertical p3">
                         <div class="links wrapper-vertical margin-below">
                             <h5>Links</h5>
@@ -77,7 +77,7 @@
 </section>
 
 {% if headerImage %}
-    <section class="w10 slidein">
+    <section class="w10 slidein6">
         <div class="p2 project center container">
             <a href="/assets/images/portfolio/{{ headerImage }}" target="_blank" class="ripple-button-light w9">
                 <img class="w10" src="/assets/images/portfolio/{{ headerImage }}">
@@ -86,7 +86,7 @@
     </section>
     <section class="wrapper-horizontal center alt-left project margin-below">
         {% for image in images %}
-            <div class="w3 slidein">
+            <div class="w3 slidein{{ forloop.index | plus:6 }}">
                 <div class="p2 wrapper-horizontal container">
                     <a class="ripple-button-light w10" href="/assets/images/portfolio/{{ image }}" target="_blank">
                         <img class="w10" src="/assets/images/portfolio/{{ image }}">

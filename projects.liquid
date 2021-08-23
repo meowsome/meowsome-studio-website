@@ -9,8 +9,12 @@ link: projects
     <div class="projects container">
         {% for project in collections.projects %}
             {% assign remainder = forloop.index0 | modulo: 4 %}
+            
+            {% if forloop.last == true %}
+                {% assign i = forloop.index | plus:1 %}
+            {% endif %}
 
-            <a href="/projects/{{ project.data.link }}" class="slidein card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
+            <a href="/projects/{{ project.data.link }}" class="slidein{{forloop.index}} card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
                 <div class="p3 wrapper-vertical margin-below">
 
                     {% if remainder == "0" %}
@@ -38,7 +42,7 @@ link: projects
             </a>
         {% endfor %}
 
-        <a href="https://github.com/meowsome?tab=repositories" target="_blank" class="w1 slidein card ripple-button-light" style="background: #333;">
+        <a href="https://github.com/meowsome?tab=repositories" target="_blank" class="w1 slidein{{i}} card ripple-button-light" style="background: #333;">
             <div class="p3">
                 <h3>More on GitHub <i class="fa fa-arrow-right"></i></h3>
             </div>
