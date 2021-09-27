@@ -1,7 +1,7 @@
 const axios = require("axios");
 require('dotenv').config();
-const Genius = require('genius-lyrics');
-const genius = new Genius.Client(process.env.GENIUS);
+const spotify = require("@ksolo/spotify-search");
+spotify.setCredentials(process.env.SPOTIFY_CLIENT_ID, process.env.SPOTIFY_CLIENT_SECRET);
 
 module.exports = function() {
     // Get song from Last FM first
@@ -22,24 +22,23 @@ module.exports = function() {
 
         var track = response.data.toptracks.track[0]; // Get the track result from last fm
 
-        // Search Genius for the song that was found
-        return genius.songs.search(track.name + " " + track.artist.name).then(function(songs) {
-            if (songs.length == 0) return console.log("No result from genius");
+        // Search Spotify for the song that was found
+        return spotify.search(track.name + " " + track.artist.name).then(function(songs) {
+            if (songs.tracks.items.length == 0) return console.log("No result from spotify");
             
-            var song = songs[0];
+            var song = songs.tracks.items[0];
 
             // Remove artist name from title and truncate if too long
-            if (song.title.length > 20) song.title = song.title.replace(/^(.{20}[^\s]*).*/, "$1") + "...";
+            if (song.name.length > 20) song.name = song.name.replace(/^(.{20}[^\s]*).*/, "$1") + "...";
 
             return {
-                song: song.title,
-                artwork: song.raw.header_image_thumbnail_url,
-                url: song.raw.url
+                song: song.name,
+                artwork: song.album.images[1].url,
+                url: song.external_urls.spotify
             };
-        }).catch(function (err) {
+        }, function(err) {
             console.log(err);
-            console.log("Genius error");
-            return;
+            console.log("Spotify error");
         });
     }).catch(function(err) {
         console.log(err);

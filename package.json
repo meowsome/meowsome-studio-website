@@ -10,6 +10,7 @@
     "@11ty/eleventy": "^0.12.1"
   },
   "dependencies": {
+    "@ksolo/spotify-search": "^1.0.0",
     "dotenv": "^10.0.0",
     "genius-lyrics": "^4.2.9",
     "twitter": "^1.7.1"
