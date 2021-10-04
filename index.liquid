@@ -25,9 +25,9 @@ index: true
     &nbsp;&nbsp;&nbsp;
     <section class="wrapper-vertical w4">
         <section class="w10">
-            <div class="p1">
+            <div class="p1 slidein2">
                 <a href="/projects/{{ collections.projects[0].data.link }}" class="container">
-                    <article class="slidein2 card ripple-button-light" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
+                    <article class="card ripple-button-light" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
                         <div class="p3 wrapper-vertical margin-below">
                             <h5 class="meta">FEATURED PROJECT</h5>
                             <div class="wrapper-horizontal center left">
@@ -49,9 +49,9 @@ index: true
             <section class="nowrapper-horizontal">
                 {% if github %}
                     <section class="grow">
-                        <div class="p1">
+                        <div class="p1 slidein4">
                             <a href="{{ github.url }}" target="_blank" class="container">
-                                <article class="slidein4 card ripple-button-light" style="background:linear-gradient(#6e6e6e, #211F1F) center;background-size:cover;">
+                                <article class="card ripple-button-light" style="background:linear-gradient(#6e6e6e, #211F1F) center;background-size:cover;">
                                     <div class="p2 wrapper-vertical">
                                         <p><i class="fab fa-github"></i>&nbsp;&nbsp;Committed to <b>{{ github.repo }}</b></p>
                                     </div>
@@ -62,9 +62,9 @@ index: true
                 {% endif %}
                 {% if topsong %}
                     <section class="grow">
-                        <div class="p1">
+                        <div class="p1 slidein5">
                             <a href="{{ topsong.url }}" target="_blank" class="container">
-                                <article class="slidein5 card ripple-button-light" style="background:linear-gradient({% if topsong.artwork != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ topsong.artwork }}'){% else %}rgba(252,60,68,0.65), rgba(252,60,68,0.9)){% endif %} center;background-size:cover;">
+                                <article class="card ripple-button-light" style="background:linear-gradient({% if topsong.artwork != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ topsong.artwork }}'){% else %}rgba(252,60,68,0.65), rgba(252,60,68,0.9)){% endif %} center;background-size:cover;">
                                     <div class="p2 wrapper-vertical">
                                         <p><i class="fas fa-headphones"></i>&nbsp;&nbsp;Listened to <b>{{ topsong.song }}</b></p>
                                     </div>
@@ -76,9 +76,9 @@ index: true
             </section>
             {% if tweet %}
                 <section class="grow">
-                    <div class="p1">
+                    <div class="p1 slidein6">
                         <a href="{{ tweet.url }}" target="_blank" class="container">
-                            <article class="slidein6 card ripple-button-light" style="background:linear-gradient({% if tweet.image != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ tweet.image }}'){% else %}rgba(29,161,242,0.65), rgba(29,161,242,0.9)){% endif %} center;background-size:cover;">
+                            <article class="card ripple-button-light" style="background:linear-gradient({% if tweet.image != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ tweet.image }}'){% else %}rgba(29,161,242,0.65), rgba(29,161,242,0.9)){% endif %} center;background-size:cover;">
                                 <div class="p2 wrapper-vertical">
                                     <p><i class="fab fa-twitter"></i>&nbsp;&nbsp;Tweeted <b>{{ tweet.content }}</b></p>
                                 </div>

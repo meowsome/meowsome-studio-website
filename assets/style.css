@@ -294,7 +294,7 @@ footer {
 }
 
 .foreground.card,
-.projects .card {
+.projects article {
     margin-bottom: 1em;
 }
 
@@ -710,7 +710,7 @@ a.pill.accent {
     }
 
     /* Don't show the project image on every 4th item while in mobile layout */
-    .projects .card:nth-child(4n+1) .project-image {
+    .projects article:nth-child(4n+1) .project-image {
         display: none;
     }
 }
@@ -729,20 +729,20 @@ a.pill.accent {
         margin-bottom: 1em;
     }
 
-    .projects .card {
+    .projects article {
         flex: auto;
         margin: 8px;
     }
 
     /* Make every 4th item starting from the 1st 100% width */
-    .projects .card:nth-child(4n+1) {
+    .projects article:nth-child(4n+1) {
         width: 100%;
     }
 
     /* Make every other item fill up the same width (33.3%) */
-    .projects .card:nth-child(4n+2),
-    .projects .card:nth-child(4n+3),
-    .projects .card:nth-child(4n+4) {
+    .projects article:nth-child(4n+2),
+    .projects article:nth-child(4n+3),
+    .projects article:nth-child(4n+4) {
         width: 1em;
     }
 

@@ -14,39 +14,46 @@ link: projects
                 {% assign i = forloop.index | plus:1 %}
             {% endif %}
 
-            <a href="/projects/{{ project.data.link }}" class="slidein{{forloop.index}} card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
-                <div class="p3 wrapper-vertical margin-below">
+            <article class="slidein{{forloop.index}}">
+                <a href="/projects/{{ project.data.link }}" class="container">
+                    <div class="card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
+                        <div class="p3 wrapper-vertical margin-below">
+                            {% if remainder == "0" %}
+                            <div class="wrapper-horizontal w10">
+                                <div class="wrapper-vertical w7 center">
+                                    <div class="wrapper-vertical w9">
+                            {% endif %}
 
-                    {% if remainder == "0" %}
-                    <div class="wrapper-horizontal w10">
-                        <div class="wrapper-vertical w7 center">
-                            <div class="wrapper-vertical w9">
-                    {% endif %}
-
-                    <div class="wrapper-horizontal center left">
-                        <img src="/assets/images/portfolio/{{ project.data.link }}.png" class="icon">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <h3>{{ project.data.title }}</h3>
-                    </div>
-                    <p>{{ project.data.short_description }}</p>
-
-                    {% if remainder == "0" %}
+                            <div class="wrapper-horizontal center left">
+                                <img src="/assets/images/portfolio/{{ project.data.link }}.png" class="icon">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <h3>{{ project.data.title }}</h3>
                             </div>
-                        </div>
-                        <div class="project-image w3 right">
-                            <img src="/assets/images/portfolio/{{ project.data.headerImage }}" class="w10">
+                            <p>{{ project.data.short_description }}</p>
+
+                            {% if remainder == "0" %}
+                                    </div>
+                                </div>
+                                <div class="project-image w3 right">
+                                    <img src="/assets/images/portfolio/{{ project.data.headerImage }}" class="w10">
+                                </div>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
-                    {% endif %}
-                </div>
-            </a>
+                </a>
+            </article>
         {% endfor %}
 
-        <a href="https://github.com/meowsome?tab=repositories" target="_blank" class="w1 slidein{{i}} card ripple-button-light" style="background: #333;">
-            <div class="p3">
-                <h3>More on GitHub <i class="fa fa-arrow-right"></i></h3>
-            </div>
-        </a>
+        <article class="slidein{{i}}">
+            <a href="https://github.com/meowsome?tab=repositories" target="_blank" class="container">
+                <div class="w10 card ripple-button-light" style="background: #333;">
+                    <div class="p3">
+                        <h3>More on GitHub <i class="fa fa-arrow-right"></i></h3>
+                    </div>
+                </div>
+            </a>
+        </article>
     </div>
 </section>
 
