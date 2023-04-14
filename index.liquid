@@ -74,19 +74,6 @@ index: true
                     </section>
                 {% endif %}
             </section>
-            {% if tweet %}
-                <section class="grow">
-                    <div class="p1 slidein6">
-                        <a href="{{ tweet.url }}" target="_blank" class="container">
-                            <article class="card ripple-button-light" style="background:linear-gradient({% if tweet.image != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ tweet.image }}'){% else %}rgba(29,161,242,0.65), rgba(29,161,242,0.9)){% endif %} center;background-size:cover;">
-                                <div class="p2 wrapper-vertical">
-                                    <p><i class="fab fa-twitter"></i>&nbsp;&nbsp;Tweeted <b>{{ tweet.content }}</b></p>
-                                </div>
-                            </article>
-                        </a>
-                    </div>
-                </section>
-            {% endif %}
         </section>
     </section>
 </div>
