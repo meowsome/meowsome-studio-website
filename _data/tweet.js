@@ -1,11 +1,20 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 const {resolve} = require("path");
 require('dotenv').config();
 
 module.exports = function() {
     // Get Tweets from timeline
     return new Promise(async function(res, reject) {
-        var driver = await new Builder().forBrowser("chrome").build();
+        const screen = {
+            width: 640,
+            height: 480
+        };
+
+        var driver = new Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(new chrome.Options().headless().windowSize(screen))
+            .build();
 
         try {
             var localFile = resolve("twitter_embed.html").replaceAll("\\", "/").split("/"); // Replace all backslashes with forwardslashes and split
