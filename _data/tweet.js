@@ -1,35 +1,40 @@
-const Twitter = require('twitter');
-const twitterClient = new Twitter({
-  consumer_key: process.env.TWITTER_KEY,
-  consumer_secret: process.env.TWITTER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_SECRET
-})
+const {Builder, By, Key, until} = require('selenium-webdriver');
+const {resolve} = require("path");
 require('dotenv').config();
 
 module.exports = function() {
     // Get Tweets from timeline
-    return new Promise(function(resolve, reject) {
-        twitterClient.get('statuses/user_timeline', function(err, tweets, res) {
-            if (err) {
-                console.log("Twitter client error");
-                reject(err);
-            }
+    return new Promise(async function(res, reject) {
+        var driver = await new Builder().forBrowser("chrome").build();
 
-            var tweet = tweets.filter(tweet => tweet.in_reply_to_status_id == null && tweet.retweeted == false)[0]; // Get latest Tweet that was not in reply to anyone
+        try {
+            var localFile = resolve("twitter_embed.html").replaceAll("\\", "/").split("/"); // Replace all backslashes with forwardslashes and split
+            localFile = localFile.slice(0,-1).join("/") + "/_data/" + localFile.slice(-1)[0]; // Construct new url by adding /_data/ right before filename
+            await driver.get('file:///' + localFile); // Start selenium
+
+            var user = await driver.wait(until.elementLocated(By.css('#twitter-widget-0')), 5000);
+
+            const iframe = driver.findElement(By.css('#twitter-widget-0'));
+            await driver.switchTo().frame(iframe); // Go to iframe
+
+            var tweetRaw = await driver.wait(until.elementLocated(By.css('#__NEXT_DATA__')), 5000).getAttribute('textContent'); // Get all tweets from iframe
+            var tweetJson = JSON.parse(tweetRaw);
+            var latestTweet = tweetJson['props']['pageProps']['timeline']['entries'].find(tweet => tweet['content']['tweet']['user']['screen_name'] == 'meowsom3')['content']['tweet'] // Get latest tweet that was posted by me
 
             // Get and fix up Tweet content
-            var content = tweet.text;
+            var content = latestTweet['full_text'];
             content = content.replace(/\s?https?:\/\/.*[\r\n]*\s?/g, ""); // Remove URLs
             if (content.length > 25) content = content.replace(/^(.{25}[^\s]*).*/, "$1") + "..."; // Smart-truncate
             if (content.length == 0) content = "media with no caption"; // If no text, say so
 
             // Return Tweet content, image if exists, and url
-            resolve({
+            res({
                 content: content,
-                image: (tweet.entities.media) ? tweet.entities.media[0].media_url_https : "",
-                url: "https://twitter.com/meowsom3/status/" + tweet.id_str
-            })
-        });
+                image: (latestTweet['entities']['media']) ? latestTweet['entities']['media'][0]['media_url_https'] : "",
+                url: "https://twitter.com" + latestTweet['permalink']
+            });
+        } finally {
+            await driver.quit();
+        }
     });
 }

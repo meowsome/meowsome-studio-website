@@ -12,6 +12,6 @@
   "dependencies": {
     "@ksolo/spotify-search": "^1.0.0",
     "dotenv": "^10.0.0",
-    "twitter": "^1.7.1"
+    "selenium-webdriver": "^4.10.0"
   }
 }
