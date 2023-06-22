@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve --port=8055"
+  },
   "author": "Meowsome",
   "license": "ISC",
   "devDependencies": {
