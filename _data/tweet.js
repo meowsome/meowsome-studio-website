@@ -23,7 +23,7 @@ module.exports = function() {
         res({
             content: content,
             image: (latestTweet['entities']['media']) ? latestTweet['entities']['media'][0]['media_url_https'] : "",
-            url: "https://twitter.com" + latestTweet['permalink']
+            url: "https://twitter.com/meowsom3/status/" + latestTweet['id_str']
         });
     });
 }
