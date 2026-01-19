@@ -9,7 +9,7 @@
   "author": "Meowsome",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^3.1.2"
   },
   "dependencies": {
     "@ksolo/spotify-search": "^1.0.0",

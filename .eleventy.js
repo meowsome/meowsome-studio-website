@@ -6,4 +6,8 @@ module.exports = function (eleventyConfig) {
             return new Date(b.data.dates.updated).getTime() - new Date(a.data.dates.updated).getTime();
         });
     });
+    eleventyConfig.setLiquidOptions({
+		dynamicPartials: false,
+		strictFilters: false
+	});
 }
