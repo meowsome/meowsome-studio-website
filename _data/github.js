@@ -8,7 +8,7 @@ module.exports = function() {
 
         var repo = activity.repo.name.replace(/^(.*[\\\/])/, '').replace(/_/g," ").replace(/-/g," "); // Remove username from repo, everything before slash, remove dashes and underscores
 
-        var url = activity.payload.commits[0].url.replace("api.", "").replace("/repos", ""); // Turn API url into regular url
+        var url = "https://github.com/" + activity.repo.name; // Create url for github repo
 
         // Return commit message, repo name, and url to commit
         return {
