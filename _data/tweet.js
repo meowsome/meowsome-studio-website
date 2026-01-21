@@ -16,7 +16,7 @@ module.exports = function() {
         // Get and fix up Tweet content
         var content = latestTweet['full_text'];
         content = content.replace(/\s?https?:\/\/.*[\r\n]*\s?/g, ""); // Remove URLs
-        if (content.length > 25) content = content.replace(/^(.{25}[^\s]*).*/, "$1") + "..."; // Smart-truncate
+        if (content.length > 200) content = content.replace(/^(.{200}[^\s]*).*/, "$1") + "..."; // Smart-truncate
         if (content.length == 0) content = "media with no caption"; // If no text, say so
 
         // Return Tweet content, image if exists, and url

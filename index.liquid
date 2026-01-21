@@ -10,12 +10,12 @@ index: true
             <article class="card w10 foreground slidein1">
                 <div class="p2 wrapper-vertical center">
                     <section class="w7">
-                        <img class="w10" id="index-image" src="/assets/images/icon.png">
+                        <img class="w10 slidein2" id="index-image" src="/assets/images/icon.png">
                     </section>
                     <section class="w10">
                         <div class="p2 wrapper-vertical text margin-below">
-                            <h3>Hello, and welcome!</h3>
-                            <p>Meowsome Studio features a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time.</p>
+                            <h3 class="slidein3">Hello, and welcome!</h3>
+                            <p class="slidein4">Meowsome Studio features a collection of projects ranging from useful tools to fun entertainment platforms created by a programmer in the United States in his free time.</p>
                         </div>
                     </section>
                 </div>
@@ -24,36 +24,33 @@ index: true
     </section>
     &nbsp;&nbsp;&nbsp;
     <section class="wrapper-vertical w4">
-        <section class="w10">
-            <div class="p1 slidein2">
-                <a href="/projects/{{ collections.projects[0].data.link }}" class="container">
-                    <article class="card ripple-button-light" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
-                        <div class="p3 wrapper-vertical margin-below">
-                            <h5 class="meta">FEATURED PROJECT</h5>
-                            <div class="wrapper-horizontal center left">
-                                <img src="/assets/images/portfolio/{{ collections.projects[0].data.link }}.png" class="icon">
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <h1>{{ collections.projects[0].data.title }}</h1>
-                            </div>
-                            <p class="bigtext">{{ collections.projects[0].data.short_description }}</p>
-                        </div>
-                    </article>
-                </a>
-            </div>
-        </section>
-        
-        <div class="slidein3 p1">
+        <div class="slidein1 p1">
             <h5>What I've been up to...</h5>
         </div>
         <section class="w10 wrapper-horizontal center alt-left feed">
+            <section class="w10">
+                <div class="p1 slidein2">
+                    <a href="/projects/{{ collections.projects[0].data.link }}" class="container">
+                        <article class="card ripple-button-light square left" style="background:linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.4),rgba(0,0,0,0.6),rgba(0,0,0,0.75)),url('/assets/images/portfolio/{{ collections.projects[0].data.headerImage }}') center;background-size:cover;">
+                            <div class="p2 wrapper-vertical bottom">
+                                <h5 class="meta">FEATURED PROJECT</h5>
+                                <div class="wrapper-horizontal center left">
+                                    <h1>{{ collections.projects[0].data.title }}</h1>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+            
             <section class="nowrapper-horizontal">
                 {% if github %}
                     <section class="grow">
-                        <div class="p1 slidein4">
+                        <div class="p1 slidein3">
                             <a href="{{ github.url }}" target="_blank" class="container">
-                                <article class="card ripple-button-light" style="background:linear-gradient(#6e6e6e, #211F1F) center;background-size:cover;">
-                                    <div class="p2 wrapper-vertical">
-                                        <p><i class="fa-brands fa-github"></i>&nbsp;&nbsp;Committed to <b>{{ github.repo }}</b></p>
+                                <article class="card ripple-button-light square left" style="background:linear-gradient(#6e6e6e, #211F1F) center;background-size:cover;">
+                                    <div class="p2 wrapper-vertical bottom">
+                                        <p><i class="fa-brands fa-github"></i>&nbsp;&nbsp;Worked on <b>{{ github.repo }}</b></p>
                                     </div>
                                 </article>
                             </a>
@@ -62,10 +59,10 @@ index: true
                 {% endif %}
                 {% if topsong %}
                     <section class="grow">
-                        <div class="p1 slidein5">
+                        <div class="p1 slidein4">
                             <a href="{{ topsong.url }}" target="_blank" class="container">
-                                <article class="card ripple-button-light" style="background:linear-gradient({% if topsong.artwork != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ topsong.artwork }}'){% else %}rgba(252,60,68,0.65), rgba(252,60,68,0.9)){% endif %} center;background-size:cover;">
-                                    <div class="p2 wrapper-vertical">
+                                <article class="card ripple-button-light square left" style="background:linear-gradient({% if topsong.artwork != '' %}rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.6),rgba(0,0,0,0.75)),url('{{ topsong.artwork }}'){% else %}rgba(252,60,68,0.65), rgba(252,60,68,0.9)){% endif %} center;background-size:cover;">
+                                    <div class="p2 wrapper-vertical bottom">
                                         <p><i class="fa-solid fa-music"></i>&nbsp;&nbsp;Listened to <b>{{ topsong.song }}</b></p>
                                     </div>
                                 </article>
@@ -74,19 +71,20 @@ index: true
                     </section>
                 {% endif %}
             </section>
-            {% if tweet %}
-                <section class="grow">
-                    <div class="p1 slidein6">
-                        <a href="{{ tweet.url }}" target="_blank" class="container">
-                            <article class="card ripple-button-light" style="background:linear-gradient({% if tweet.image != '' %}rgba(0,0,0,0.4), rgba(0,0,0,0.75)),url('{{ tweet.image }}'){% else %}rgba(29,161,242,0.65), rgba(29,161,242,0.9)){% endif %} center;background-size:cover;">
-                                <div class="p2 wrapper-vertical">
+
+            <section class="grow">
+                <div class="p1 slidein5">
+                    <a href="{{ tweet.url }}" target="_blank" class="container">
+                        <article class="card ripple-button-light square left" style="background:linear-gradient({% if tweet.image != '' %}rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.6),rgba(0,0,0,0.75)),url('{{ tweet.image }}'){% else %}rgba(29,161,242,0.65), rgba(29,161,242,0.9)){% endif %} center;background-size:cover;">
+                            {% if tweet %}
+                                <div class="p2 wrapper-vertical bottom">
                                     <p><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;Tweeted <b>{{ tweet.content }}</b></p>
                                 </div>
-                            </article>
-                        </a>
-                    </div>
-                </section>
-            {% endif %}
+                            {% endif %}
+                        </article>
+                    </a>
+                </div>
+            </section>
         </section>
     </section>
 </div>
