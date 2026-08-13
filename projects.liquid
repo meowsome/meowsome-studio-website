@@ -18,27 +18,16 @@ link: projects
                 <a href="/projects/{{ project.data.link }}" class="container">
                     <div class="card ripple-button-light" style="background: linear-gradient(to bottom, {{ project.data.color[0] }}, {{ project.data.color[1] }});">
                         <div class="p3 wrapper-vertical margin-below">
-                            {% if remainder == "0" %}
-                            <div class="wrapper-horizontal w10">
-                                <div class="wrapper-vertical w7 center">
-                                    <div class="wrapper-vertical w9">
-                            {% endif %}
-
                             <div class="wrapper-horizontal center left">
                                 <img src="/assets/images/portfolio/{{ project.data.link }}.png" class="icon">
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <h3>{{ project.data.title }}</h3>
+                                {% if remainder == 0 %}
+                                    <h3>{{ project.data.title }}</h3>
+                                {% else %}
+                                    <h4>{{ project.data.title }}</h4>
+                                {% endif %}
                             </div>
                             <p>{{ project.data.short_description }}</p>
-
-                            {% if remainder == "0" %}
-                                    </div>
-                                </div>
-                                <div class="project-image w3 right">
-                                    <img src="/assets/images/portfolio/{{ project.data.headerImage }}" class="w10">
-                                </div>
-                            </div>
-                            {% endif %}
                         </div>
                     </div>
                 </a>
