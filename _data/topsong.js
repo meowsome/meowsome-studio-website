@@ -43,11 +43,8 @@ module.exports = function() {
         }).then(function(response) {
             var song = response.data.track;
 
-            // Remove artist name from title and truncate if too long
-            if (song.name.length > 20) song.name = song.name.replace(/^(.{20}[^\s]*).*/, "$1") + "...";
-            
             var responseData = {
-                song: song.name,
+                artist: song.artist.name,
                 url: song.url
             };
 
