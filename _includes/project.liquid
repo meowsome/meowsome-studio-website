@@ -1,77 +1,81 @@
 {% include header %}
 
 <section class="wrapper-horizontal left">
-    <div class="w7">
-        <div class="p1">
-            <article id="project_title" class="slidein1 wrapper-horizontal center left ignore-mobile-wrapper-fixing p1">
-                <img src="/assets/images/portfolio/{{ link }}.png" class="icon">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <h1>{{ title }}</h1>
-            </article>
+    <div class="w10 wrapper-vertical">
+        <article id="project_title" class="slidein1 wrapper-horizontal center left ignore-mobile-wrapper-fixing p1">
+            <img src="/assets/images/portfolio/{{ link }}.png" class="icon">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <h1>{{ title }}</h1>
+        </article>
 
-            <div class="slidein2 card foreground w10">
-                <div class="p3 wrapper-vertical margin-below">
-                    <h5>Description</h5>
-                    <p class="text">{{ description }}</p>
+        <div class="w10 wrapper-horizontal">
+            <div class="w7">
+                <div class="p1">
+                    <div class="slidein2 card foreground w10">
+                        <div class="p3 wrapper-vertical margin-below">
+                            <h5>Description</h5>
+                            <p class="text">{{ description }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="w3">
-        <div class="p1">
-            <article class="slidein3 card foreground w10">
-                <div class="wrapper-vertical p3 margin-below">
-                    <div class="wrapper-horizontal w10 ignore-mobile-wrapper-fixing">
-                        <div class="w6">
-                            <h5>Last Updated</h5>
-                        </div>
-                        <div class="w4 right">
-                            <p>{{ dates.updated }}</p>
-                        </div>
-                    </div>
-                    <div class="wrapper-horizontal w10 ignore-mobile-wrapper-fixing">
-                        <div class="w6">
-                            <h5>Released</h5>
-                        </div>
-                        <div class="w4 right">
-                            <p>{{ dates.released }}</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            {% if technologies %}
-                <article class="slidein4 card foreground w10">
-                    <div class="wrapper-vertical p3">
-                        <div class="wrapper-vertical margin-below">
-                            <h5>Technologies</h5>
-                            <div class="wrapper-horizontal">
-                                {% for technology in technologies %}
-                                <div class="pill accent">
-                                    <p>{{ technology }}</p>
+            <div class="w3">
+                <div class="p1">
+                    <article class="slidein3 card foreground w10">
+                        <div class="wrapper-vertical p3 margin-below">
+                            <div class="wrapper-horizontal w10 ignore-mobile-wrapper-fixing">
+                                <div class="w6">
+                                    <h5>Last Updated</h5>
                                 </div>
-                                {% endfor %}
+                                <div class="w4 right">
+                                    <p>{{ dates.updated }}</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-horizontal w10 ignore-mobile-wrapper-fixing">
+                                <div class="w6">
+                                    <h5>Released</h5>
+                                </div>
+                                <div class="w4 right">
+                                    <p>{{ dates.released }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
-            {% endif %}
+                    </article>
 
-            {% if links %}
-                <article class="slidein5 card foreground w10">
-                    <div class="wrapper-vertical p3">
-                        <div class="links wrapper-vertical margin-below">
-                            <h5>Links</h5>
-                            <ul class="margin-below">
-                            {% for link in links %}
-                                <li class="wrapper-horizontal"><a class="ripple-button-dark pill accent" href="{{ link.link }}" target="_blank">{{ link.title }}</a></li>
-                            {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            {% endif %}
+                    {% if technologies %}
+                        <article class="slidein4 card foreground w10">
+                            <div class="wrapper-vertical p3">
+                                <div class="wrapper-vertical margin-below">
+                                    <h5>Technologies</h5>
+                                    <div class="wrapper-horizontal">
+                                        {% for technology in technologies %}
+                                        <div class="pill accent">
+                                            <p>{{ technology }}</p>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    {% endif %}
+
+                    {% if links %}
+                        <article class="slidein5 card foreground w10">
+                            <div class="wrapper-vertical p3">
+                                <div class="links wrapper-vertical margin-below">
+                                    <h5>Links</h5>
+                                    <ul class="margin-below">
+                                    {% for link in links %}
+                                        <li class="wrapper-horizontal"><a class="ripple-button-dark pill accent" href="{{ link.link }}" target="_blank">{{ link.title }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </section>
